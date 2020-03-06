@@ -8,15 +8,22 @@ export default class HomeStore {
 
     @action calculate = () => {
         const { etanol, gasolina } = this;
-        if (!isNaN(Number(etanol)) && !isNaN(Number(gasolina))) {
-            const value = Number(etanol) / Number(gasolina);
 
-            if (value > 0.70) {
-                this.resultado = 'Vale a pena gasolina';
-            } else if (value < 0.70) {
-                this.resultado = 'Vale a pena etanol';
-            } else {
-                this.resultado = 'São equivalentes';
+        if (isNaN(Number(etanol))){
+            this.resultado = "Valor invalido para a Etanol";
+        }else if(isNaN(Number(gasolina)))
+            this.resultado = "Valor invalido para a Gasolina";
+        else{
+            if (!isNaN(Number(etanol)) && !isNaN(Number(gasolina))) {
+                const value = Number(etanol) / Number(gasolina);
+
+                if (value > 0.70) {
+                    this.resultado = 'Vale a pena gasolina';
+                } else if (value < 0.70) {
+                    this.resultado = 'Vale a pena etanol';
+                } else {
+                    this.resultado = 'São equivalentes';
+                }
             }
         }
     }

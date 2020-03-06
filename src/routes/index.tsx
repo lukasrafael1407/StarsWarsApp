@@ -12,7 +12,7 @@ function Routes() {
                 <Stack.Navigator>
                     <Stack.Screen options={{
                         headerTitle: 'Etanol ou Gasolina?',
-                        headerTintColor: '#ffffff',
+                        headerTintColor: 'ffffff',
                         headerStyle: {
                             backgroundColor: '#2b7cd7',
                         }
